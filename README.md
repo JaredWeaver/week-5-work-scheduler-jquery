@@ -1,6 +1,8 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-![Screenshot of Project](/assets/screenshot-workschedule.png)
+https://jaredweaver.github.io/week-5-work-scheduler-jquery/
+
+![Screenshot of Project](/assets/screenshot-workschedule.png " ")
 
 ## Task
 
