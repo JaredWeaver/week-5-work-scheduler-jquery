@@ -4,18 +4,15 @@ var h = [""];
 var hours;
 var userTasks;
 
-
-//Display day and date in the header
-function displayDay() {
-    
-    var today = moment().format('[Today is ]dddd, MMMM Do, YYYY');
-    $('#currentDay').html(today);
-
-}
-
-displayDay()
-
 $(document).ready(function() {
+  function displayDay() {
+      
+      var today = moment().format('[Today is ]dddd, MMMM Do, YYYY');
+      $('#currentDay').html(today);
+
+  }
+
+  displayDay()
 
   $('.saveBtn').on("click", function(event) {
     var hour = $(this).attr('id');
@@ -23,15 +20,12 @@ $(document).ready(function() {
     localStorage.setItem(hour, userTasks);
     
   });
-    // Colors of the blocks change as time progresses
   function colorCodeBlocks() {
     
-    // Find current hour in a number form
     var currentHour = moment().hour();    
-    // Loop through <textarea> ID's and parse/split them into a string
     $('.description').each(function () {
         var userTime = parseInt($(this).attr('id').split('h')[1]);
-    // 
+   
         if (userTime < currentHour){
           $(this).addClass('past');
         } else if (userTime === currentHour){
@@ -40,8 +34,7 @@ $(document).ready(function() {
           $(this).addClass('future');
         }
     });
-  }
-    
+  }   
  
   $("#h9.description").val(window.localStorage.getItem("n9"));
   $("#h10.description").val(window.localStorage.getItem("n10"));
@@ -52,9 +45,6 @@ $(document).ready(function() {
   $("#h15.description").val(window.localStorage.getItem("n15"));
   $("#h16.description").val(window.localStorage.getItem("n16"));
   $("#h17.description").val(window.localStorage.getItem("n17"));
-
-  
-  
 
   colorCodeBlocks()
   
